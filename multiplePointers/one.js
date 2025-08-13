@@ -13,38 +13,31 @@
 // averagePair([-1,0,3,4,5,6], 4.1) // false
 // averagePair([],4) // false
 
-function averagePair(arr, target){
-    // if length of integer is less than the 2 return false
-    if(arr.length < 2){
+function averagePair(arr, target) {
+    
+    if (arr.length < 2) {
         return false
     }
-
-    //let first pointer be at the start of the array 
-
-    let start = 0
-    let end = arr.length-1
-
-    //store the calculated value in the temp variable
     
-    while(start < end){
-        let temp=0
-        temp=(arr[start] + arr [end]) / 2
+    let start = 0
+    let end = arr.length - 1
+
+    while (start < end) {
+        let temp = 0
+        temp = (arr[start] + arr[end]) / 2
 
 
-        if(temp == target){
+        if (temp == target) {
             return true
         }
 
-        else if( temp > target){
+        else if (temp > target) {
             end--;
         }
-        else{
+        else {
             start++;
         }
     }
-
-
     return false
-    
 }
-console.log(averagePair([],4))
+console.log(averagePair([], 4))
